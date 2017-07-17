@@ -1,0 +1,40 @@
+/*
+ * Hello 'world' example.
+ *   A component printing a greeting.
+ */
+import static oms3.SimBuilder.instance as OMS3
+
+OMS3.sim()
+{
+
+    // build()
+    
+    model(while: "c.goon") {
+    	
+        components {
+        	"in3" "ex0.In3"
+           "c" "ex0.Component"
+           "out2" "ex0.Out2"
+        }
+        
+        parameter {
+          "c.val" 10.0
+        }
+        
+        inFluxes {
+        	"11.outval1" "in3.inval1"
+        	"12.outval1" "in3.inval2"
+        	"13.outval1" "in3.inval3"
+        }
+        
+        outFluxes {
+        	"out2.outval1" ""
+        	"out2.outval2" ""
+        }
+        
+        connect {
+        	"in3.outval" "c.inval"
+        	"c.outval" "out2.inval"
+        }
+    }
+}
