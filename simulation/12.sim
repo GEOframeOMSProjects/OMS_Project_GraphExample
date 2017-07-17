@@ -12,20 +12,23 @@ OMS3.sim()
     model(while: "c.goon") {
     	
         components {
-           "c" "ex0.Component"
-           "out1" "ex0.Out1"
+            "c" "ex0.Component"
+            "out1" "ex0.Out1"
         }
         
         parameter {
-          "c.val" 12.0
+            "c.val" 12.0
+            "c.other_val" 1.0
         }
         
         outFluxes {
-        	"out1.outval1" ""
+            "out1.outval1" ""
+            "out1.out_other_val1" ""
         }
         
         connect {
-        	"c.outval" "out1.inval"
+            "c.outval" "out1.inval"
+            "c.out_other_val" "out1.in_other_val"
         }
     }
 }

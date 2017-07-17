@@ -30,11 +30,17 @@ public class In3 {
     @InNode public List<Double> inval1;
     @InNode public List<Double> inval2;
     @InNode public List<Double> inval3;
+    @InNode public List<Double> in_other_val1;
+    @InNode public List<Double> in_other_val2;
+    @InNode public List<Double> in_other_val3;
     @Out public Double outval;
+    @Out public Double out_other_val;
 
     @Execute
     public void run() {
         outval = inval1.remove(0) + inval2.remove(0) + inval3.remove(0);
+        out_other_val = in_other_val1.remove(0) + in_other_val2.remove(0) +
+                        in_other_val3.remove(0);
     }
  
 }

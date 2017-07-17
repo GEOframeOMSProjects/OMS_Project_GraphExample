@@ -28,11 +28,14 @@ import oms3.annotations.*;
 public class In1 {
 
     @InNode public List<Double> inval1;
+    @InNode public List<Double> in_other_val1;
     @Out public Double outval; 
+    @Out public Double out_other_val;
 
     @Execute
     public void run() {
         outval = inval1.remove(0);
+        out_other_val = in_other_val1.remove(0);
     }
  
 }

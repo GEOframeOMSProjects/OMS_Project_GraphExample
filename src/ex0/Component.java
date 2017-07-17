@@ -27,8 +27,11 @@ import oms3.annotations.*;
 public class Component {
 
     @In public Double val;
+    @In public Double other_val;
     @In public Double inval;
+    @In public Double in_other_val;
     @Out public Double outval;
+    @Out public Double out_other_val;
 
     private Double[] tmpVal = new Double[]{0.0,1.0,2.0};
     private int index = 0;
@@ -42,10 +45,14 @@ public class Component {
         if (inval != null) outval = val + inval;
         else outval = val;
 
+        if (in_other_val != null) out_other_val = other_val + in_other_val;
+        else out_other_val = other_val;
+
         outval += tmpVal[index];
+        out_other_val += tmpVal[index];
 
         int timestep = index+1;
-        System.out.println("Node " + val + ", timestep " + timestep + " - value: " + outval);
+        System.out.println("Node " + val + " timestep " + timestep + " - value1: " + outval + " - value2: " + out_other_val);
 
         if (index == (tmpVal.length-1)) goon = false;
 

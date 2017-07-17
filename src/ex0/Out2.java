@@ -30,12 +30,17 @@ public class Out2 {
 
     @OutNode public List<Double> outval1 = new ArrayList<Double>();
     @OutNode public List<Double> outval2 = new ArrayList<Double>();
+    @OutNode public List<Double> out_other_val1 = new ArrayList<Double>();
+    @OutNode public List<Double> out_other_val2 = new ArrayList<Double>();
     @In public Double inval;
+    @In public Double in_other_val;
 
     @Execute
     public void run() {
         outval1.add(inval);
         outval2.add(inval);
+        out_other_val1.add(in_other_val/2);
+        out_other_val2.add(in_other_val/2);
     }
  
 }
