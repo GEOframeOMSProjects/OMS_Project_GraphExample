@@ -4,7 +4,8 @@
  */
 import static oms3.SimBuilder.instance as OMS3
 
-OMS3.graph(path: "./data/topo.csv") {
+OMS3.graph(path: "./data/topo.csv",
+           simpath: "./simulation_test/") {
 
     build()
     
