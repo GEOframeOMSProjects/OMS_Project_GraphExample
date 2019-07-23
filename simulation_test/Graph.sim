@@ -1,0 +1,19 @@
+/*
+ * Hello 'world' example.
+ *   A component printing a greeting.
+ */
+import static oms3.SimBuilder.instance as OMS3
+
+OMS3.graph(path: "./data/topo_tot.csv",
+           simpath: "./simulation_test/") {
+
+    build()
+    
+    graph(traverser: "downstream.all") {
+    	
+        components {
+        }
+        
+    }
+    
+}
